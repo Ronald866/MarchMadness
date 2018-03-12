@@ -1,0 +1,50 @@
+name:                MarchMadness
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/jc423/MarchMadness#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Joe Crawford
+maintainer:          jc423@buffalo.edu
+copyright:           2018 Joe Crawford
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+                     , Bracket
+  build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , servant-server
+                     , wai
+                     , warp
+  default-language:    Haskell2010
+
+executable MarchMadness-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , MarchMadness
+  default-language:    Haskell2010
+
+test-suite MarchMadness-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , MarchMadness
+                     , hspec
+                     , hspec-wai
+                     , hspec-wai-json
+                     , aeson
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/jc423/MarchMadness

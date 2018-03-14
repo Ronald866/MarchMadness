@@ -19,7 +19,10 @@ library
                      , Bracket
   build-depends:       base >= 4.7 && < 5
                      , aeson
+                     , bytestring
+                     , cassava
                      , servant-server
+                     , vector
                      , wai
                      , warp
   default-language:    Haskell2010

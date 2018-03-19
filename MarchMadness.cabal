@@ -21,6 +21,7 @@ library
                      , aeson
                      , bytestring
                      , cassava
+                     , containers
                      , servant-server
                      , vector
                      , wai
